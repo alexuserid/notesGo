@@ -44,7 +44,7 @@ func plug(d Device) {
 //почему мы не могли в функции Plug просто написать println(d)? Ведь d в данном случае вроде как имеет тип интерфейса, 
 //в котором уже есть функция PlugIn. Почему нам надо ее еще и через точку писать? 
 //Следующий комментарий верно отвечает на этот вопрос?
-//println(d1.PlugIn()). Here d1 that has intrface that call method PlugIn by dot. 
+//println(d1.PlugIn()). Here us a variable d1 that has intrface that call method PlugIn by dot. 
 //Since d1 has type DeviceComp therefore it call method which return "Device 1"
 func main() {
   var d1 Device = new(DeviceComp)
