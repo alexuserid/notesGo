@@ -1,10 +1,9 @@
-package main 
+package pointers
 
-import "fmt"
 
 //mA == memory adress
 func main() {
-	var n int = 6 
+	var n int = 6 //n == 6, & == mA1
 	var pn *int //pn == <nil>, &pn == mA2
 
 	pn = &n //n == 6, &n == mA1, *pn == 6, &pn == mA2
