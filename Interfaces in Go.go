@@ -103,3 +103,8 @@ func main() {
     measure(r)
     measure(c)
 }
+
+
+
+//So interfaces do the same work (identical names of methods) by different acts (operations in methods)
+//which depends only of types of recieved data
