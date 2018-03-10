@@ -20,7 +20,8 @@ func main() {
 
 //when we run the program and access the URL: http://localhost:8080/cats, the program would present a page contain: Hi there, I love cats!
 
-//More information concerning r.URL.Path from https://en.wikipedia.org/wiki/URL:
-//Every HTTP URL conforms to the syntax of a generic URI. A generic URI is of the form:
-//scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]
+//More information concerning r.URL.Path from https://golang.org/pkg/net/url/#URL:
+//A URL represents a parsed URL (technically, a URI reference).
+//The general form represented is:
+//[scheme:][//[userinfo@]host][/]path[?query][#fragment]
 //r.URL.Path is a [/path] part of the form
