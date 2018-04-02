@@ -10,11 +10,9 @@ func finder(data []int, n int) int {
 		return 0
 
 	} else if n < data[m] {
-		fmt.Println(data[:m])
 		return finder(data[:m], n)
 
 	} else if n > data[m] {
-		fmt.Println(data[m:])
 		return finder(data[m:], n)
 
 	} else if n == data[m] {
