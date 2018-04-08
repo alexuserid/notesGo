@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func Insertion(data []string) []string {
+func Insertion(data []string) {
 	var tmp string
 
 	for i := 1; i < len(data); i++ {
@@ -11,14 +11,13 @@ func Insertion(data []string) []string {
 			if data[j] < tmp {
 				break
 			}
-			data[j+1] = data[j]
-			data[j] = tmp
+			data[j], data[j+1] = tmp, data[j]
 		}
 	}
-	return data
 }
 
 func main() {
 	data := []string{"f", "e", "d", "c", "b", "a"}
-	fmt.Println(Insertion(data))
+	Insertion(data)
+	fmt.Println(data)
 }
