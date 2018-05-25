@@ -1,10 +1,12 @@
-//prime numbers:
-//1, 2, 3, 5, 7
-//all next prime numbers should end up with 1, 3, 7, 9
 package main
-import "fmt"
+
+import (
+	"fmt"
+	"flag"
+)
 
 var (
+	operation = flag.String("operation", "sieve", "Function to call. If empty, call distribution.")
 	length int
 	step int
 )
@@ -49,7 +51,9 @@ func distributionPrinter(arr []int) {
 }
 
 func main() {
+	flag.Parse()
 	n := new(int)
+	fmt.Print("Enter limit number: ")
 	fmt.Scanln(n)
 
 	boolPrime := sieve(n)
@@ -63,6 +67,11 @@ func main() {
 		if boolPrime[i] {
 			primes = append(primes, i)
 		}
+	}
+
+	if *operation == "sieve" {
+		fmt.Println(primes)
+		return
 	}
 
 	//values for control printing result in distributionAnalysis
@@ -89,3 +98,6 @@ func main() {
 	amountArr := distributionAnalysis(boolPrime)
 	distributionPrinter(amountArr)
 }
+//prime numbers:
+//1, 2, 3, 5, 7
+//all next prime numbers should end up with 1, 3, 7, 9
