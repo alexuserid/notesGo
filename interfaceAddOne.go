@@ -18,14 +18,23 @@ func (n *intn) addOne() {
 	*n += one
 }
 
-func main() {
-	var nf = new(float)
-	*nf = 2.3
-	var ni = new(intn)
-	*ni = 6
+func printer(n number) {
+	if num, ok := n.(*float); ok {
+		fmt.Println(*num)
+		return
+	}
+	fmt.Println(*n.(*intn))
+}
 
-	nf.addOne()
-	ni.addOne()
-	fmt.Println(*nf)
-	fmt.Println(*ni)
+func main() {
+	var nfp = new(float)
+	*nfp = 2.3
+	var nip = new(intn)
+	*nip = 5
+
+	nfp.addOne()
+	printer(nfp)
+
+	nip.addOne()
+	printer(nip)
 }
